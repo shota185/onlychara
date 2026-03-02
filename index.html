@@ -14,68 +14,60 @@ body{
   position:relative;
   width:100%;
   height:100vh;
-  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-/* 背景画像 */
-.container img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+/* ボタン共通 */
+.btn{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 28px;
+  color:white;
+  font-size:18px;
+  font-weight:500;
 }
 
 /* 再生ボタン */
 .play{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:88px;
-  height:88px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.25);
-  backdrop-filter:blur(6px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:90px;
+  height:90px;
 }
 
 .play:after{
   content:'';
   margin-left:6px;
   border-style:solid;
-  border-width:14px 0 14px 22px;
+  border-width:15px 0 15px 24px;
   border-color:transparent transparent transparent white;
 }
 
-/* 15秒スキップ */
+/* 15秒アイコン風 */
 .skip{
+  position:relative;
+}
+
+.skip:before{
+  content:'↺';
   position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:68px;
-  height:68px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.18);
-  backdrop-filter:blur(6px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
+  top:12px;
+  font-size:20px;
+}
+
+.skip span{
+  position:absolute;
+  bottom:16px;
   font-size:16px;
-  font-weight:500;
-  letter-spacing:1px;
 }
 
-.left{
-  left:18%;
-}
-
-.right{
-  right:18%;
+.right:before{
+  content:'↻';
 }
 
 </style>
@@ -85,15 +77,15 @@ body{
 
 <div class="container">
 
-  <a href="https://lite.tiktok.com/t/ZS9ecR7TUCTDL-xX0i1/" target="_blank">
-    
-    <img src="IMG_3334.jpeg">
+  <div class="btn skip left">
+    <span>15</span>
+  </div>
 
-    <div class="skip left">↺ 15</div>
-    <div class="play"></div>
-    <div class="skip right">15 ↻</div>
+  <div class="btn play"></div>
 
-  </a>
+  <div class="btn skip right">
+    <span>15</span>
+  </div>
 
 </div>
 
