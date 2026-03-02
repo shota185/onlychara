@@ -8,7 +8,7 @@ html,body{
   margin:0;
   height:100%;
   background:#000;
-  overflow:hidden; /* ← スクロール完全禁止 */
+  overflow:hidden;
   font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
 
@@ -18,22 +18,22 @@ body{
   align-items:center;
 }
 
+/* ===== レイアウト ===== */
 .wrapper{
   display:flex;
   align-items:center;
-  gap:60px;
-  transform:scale(0.85); /* 全体少し小さく */
+  gap:64px; /* 実機寄せ */
 }
 
-/* skip */
+/* ===== スキップ ===== */
 .skip{
-  width:34px;
-  height:34px;
+  width:38px;
+  height:38px;
 }
 
 .skip path{
   stroke:white;
-  stroke-width:1.6;
+  stroke-width:1.7;
   fill:none;
   stroke-linecap:round;
 }
@@ -44,16 +44,16 @@ body{
 
 .skip text{
   fill:white;
-  font-size:10px;
+  font-size:11px;
   font-weight:500;
   text-anchor:middle;
   dominant-baseline:middle;
 }
 
-/* play */
+/* ===== 再生 ===== */
 .play{
-  width:70px; /* 少し縮小 */
-  height:70px;
+  width:78px;
+  height:78px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -62,7 +62,7 @@ body{
 .play::after{
   content:'';
   border-style:solid;
-  border-width:16px 0 16px 24px;
+  border-width:18px 0 18px 28px;
   border-color:transparent transparent transparent white;
 }
 
@@ -73,17 +73,20 @@ body{
 
 <div class="wrapper">
 
+  <!-- 左 -->
   <svg class="skip" viewBox="0 0 80 80">
-    <path d="M40 22 A18 18 0 1 0 58 40"/>
-    <polygon points="40,18 35,23 45,23"/>
+    <path d="M40 21 A19 19 0 1 0 59 40"/>
+    <polygon points="40,17 35,22 45,22"/>
     <text x="40" y="41">15</text>
   </svg>
 
+  <!-- 再生 -->
   <div class="play"></div>
 
+  <!-- 右 -->
   <svg class="skip" viewBox="0 0 80 80">
-    <path d="M40 22 A18 18 0 1 1 22 40"/>
-    <polygon points="40,18 45,23 35,23"/>
+    <path d="M40 21 A19 19 0 1 1 21 40"/>
+    <polygon points="40,17 45,22 35,22"/>
     <text x="40" y="41">15</text>
   </svg>
 
