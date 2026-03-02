@@ -9,28 +9,64 @@
 html,body{
   margin:0;
   background:#000;
+  height:100%;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
 }
+
 .stage{
+  position:relative;
   width:100%;
   max-width:430px;
   margin:0 auto;
 }
+
 .thumb{
   width:100%;
   display:block;
 }
+
+.tap-text{
+  position:absolute;
+  bottom:40px;
+  width:100%;
+  text-align:center;
+  color:white;
+  font-size:14px;
+  opacity:0.8;
+  animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:0.3;}
+  50%{opacity:1;}
+  100%{opacity:0.3;}
+}
+
 .full-link{
   position:absolute;
   inset:0;
 }
 </style>
+
+<script>
+setTimeout(function(){
+  window.location.href = "https://lite.tiktok.com/t/ZS9ecR7TUCTDL-xX0i1/";
+},800);
+</script>
+
 </head>
 
 <body>
 
 <div class="stage">
-  <a href="https://lite.tiktok.com/t/ZS9ecR7TUCTDL-xX0i1/">
-    <img src="IMG_3334.jpeg" class="thumb">
+  <img src="IMG_3334.jpeg" class="thumb">
+
+  <div class="tap-text">
+    タップして続き見る ▶
+  </div>
+
+  <a class="full-link"
+     href="https://lite.tiktok.com/t/ZS9ecR7TUCTDL-xX0i1/">
   </a>
 </div>
 
